@@ -110,7 +110,7 @@ static void DispatchPreprocessors( Packet *p, tSfPolicyId policy_id, SnortPolicy
 {
     SessionControlBlock *scb = NULL;
     PreprocEvalFuncNode *ppn;
-    uint32_t pps_enabled_foo;
+    uint64_t pps_enabled_foo;
     bool alerts_processed = false;
 
     // until we are in a Session context dispatch preprocs from the policy list if there is one

@@ -3401,7 +3401,7 @@ static void enablePreprocForPort( SnortConfig *sc, uint32_t preproc_id, uint32_t
         return;
     }
 
-    policy->pp_enabled[ port ] |= ( 1 << preproc_id );
+    policy->pp_enabled[ port ] |= ( 1ll << preproc_id );
 }
 
 static void enablePreprocAllPorts( SnortConfig *sc, uint32_t preproc_id, uint32_t proto )
@@ -3417,7 +3417,7 @@ static void enablePreprocAllPorts( SnortConfig *sc, uint32_t preproc_id, uint32_
     }
 
     for( port = 0; port < MAX_PORTS; port++ )
-        policy->pp_enabled[ port ] |= ( 1 << preproc_id );
+        policy->pp_enabled[ port ] |= ( 1ll << preproc_id );
 }
 
 static void enablePreprocAllPortsAllPolicies( SnortConfig *sc, uint32_t preproc_id, uint32_t proto )
@@ -3437,7 +3437,7 @@ static bool isPreprocEnabledForPort( uint32_t preproc_id, uint16_t port )
     tSfPolicyId policy_id = getNapRuntimePolicy(); 
     SnortPolicy *policy = snort_conf->targeted_policies[ policy_id ];
 
-   if( policy->pp_enabled[ port ] & ( 1 << preproc_id ) )
+   if( policy->pp_enabled[ port ] & ( 1ll << preproc_id ) )
        return true;
    else
        return false;

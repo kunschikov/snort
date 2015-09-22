@@ -1674,7 +1674,7 @@ typedef struct _Packet
     int outer_family;
     //^^^-----------------------------
 
-    uint32_t preprocessor_bits; /* flags for preprocessors to check */
+    uint64_t preprocessor_bits; /* flags for preprocessors to check */
     uint32_t preproc_reassembly_pkt_bits;
 
     uint32_t packet_flags;      /* special flags for the packet */

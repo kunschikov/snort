@@ -256,7 +256,7 @@ typedef struct _PreprocEvalFuncNode
     void *context;
     uint16_t priority;
     uint32_t preproc_id;
-    uint32_t preproc_bit;
+    uint64_t preproc_bit;
     uint32_t proto_mask;
     union
     {
@@ -271,7 +271,7 @@ typedef struct _PreprocMetaEvalFuncNode
 {
     uint16_t priority;
     uint32_t preproc_id;
-    uint32_t preproc_bit;
+    uint64_t preproc_bit;
     union
     {
         PreprocMetaEvalFunc fptr;
@@ -394,16 +394,16 @@ static inline void DisableAllPreprocessors( Packet *p )
 
 static inline int EnablePreprocessor(Packet *p, unsigned int preproc_id)
 {
-    p->preprocessor_bits |= (1 << preproc_id);
+    p->preprocessor_bits |= (1ll << preproc_id);
     return 0;
 }
 
-static inline void EnablePreprocessors(Packet *p, uint32_t enabled_pps)
+static inline void EnablePreprocessors(Packet *p, uint64_t enabled_pps)
 {
     p->preprocessor_bits = enabled_pps;
 }
 
-static inline int IsPreprocessorEnabled(Packet *p, unsigned int preproc_bit)
+static inline uint64_t IsPreprocessorEnabled(Packet *p, uint64_t preproc_bit)
 {
     return ( p->preprocessor_bits & preproc_bit );
 }

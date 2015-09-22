@@ -53,7 +53,7 @@
 #define PP_SMTP                   10
 #define PP_SSH                    11
 #define PP_SSL                    12
-#define PP_STREAM                13
+#define PP_STREAM                 13
 #define PP_TELNET                 14
 #define PP_ARPSPOOF               15
 #define PP_DCE2                   16
@@ -72,10 +72,10 @@
 #define PP_DNP3                   29
 #define PP_FILE                   30
 #define PP_FILE_INSPECT           31   // TBD-EDM  fix this conflict
-#define PP_NAP_RULE_ENGINE        31
-#define PP_MAX                    32
+#define PP_NAP_RULE_ENGINE        32
+#define PP_MAX                    33
 
-#define PP_ENABLE_ALL 0xFFFFFFFF
+#define PP_ENABLE_ALL 0xFFFFFFFFffffffff
 #define PP_DISABLE_ALL 0x0
 
 // preprocessors that run before or as part of Network Analysis Policy processing... If enabled by

@@ -509,7 +509,7 @@ typedef struct _SFSnortPacket
     int orig_family;
     int outer_family;
 
-    uint32_t preprocessor_bit_mask;
+    uint64_t preprocessor_bit_mask;
     uint32_t preproc_reassembly_pkt_bit_mask;
 
     uint32_t flags;
